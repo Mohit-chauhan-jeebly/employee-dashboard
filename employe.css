@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #263248;
+}
+
+header {
+    background: #243b64;
+    color: white;
+    padding: 18px 25px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.container {
+    padding: 22px;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0001;
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #68758a;
+}
+
+.card h2 {
+    font-size: 30px;
+    color: #315bd5;
+    margin-bottom: 0;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0 15px;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid #d5dce8;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.toolbar input {
+    flex: 1;
+    min-width: 190px;
+}
+
+button {
+    background: #315bd5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #e5e9f1;
+}
+
+th {
+    background: #eaf0fb;
+}
+
+td button {
+    padding: 7px;
+    margin: 2px;
+}
+
+.cancel {
+    background: #68758a;
+}
+
+.delete {
+    background: #dc3545;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.pagination {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.pagination button.active {
+    background: #172747;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0008;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 10;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    margin-top: 5px;
+}
+
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        padding: 12px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card h2 {
+        font-size: 23px;
+    }
+
+    .toolbar > * {
+        width: 100%;
+    }
+}
