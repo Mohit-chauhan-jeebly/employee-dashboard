@@ -22,7 +22,11 @@ header h1 {
 
 .container {
     padding: 22px;
+    max-width: 1600px;
+    margin: auto;
 }
+
+/* Dashboard Cards */
 
 .dashboard {
     display: grid;
@@ -35,11 +39,18 @@ header h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px #0001;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px #0002;
 }
 
 .card h3 {
     font-size: 14px;
     color: #68758a;
+    margin-top: 0;
 }
 
 .card h2 {
@@ -48,18 +59,37 @@ header h1 {
     margin-bottom: 0;
 }
 
+/* Search, Filters and Toolbar */
+
 .toolbar {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin: 25px 0 15px;
+    align-items: center;
 }
 
-input, select, button {
-    padding: 10px;
+input,
+select,
+button {
+    padding: 10px 12px;
     border: 1px solid #d5dce8;
     border-radius: 6px;
     font-size: 14px;
+    font-family: inherit;
+}
+
+input,
+select {
+    background: white;
+    color: #263248;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #315bd5;
+    box-shadow: 0 0 0 3px #315bd51a;
 }
 
 .toolbar input {
@@ -72,16 +102,33 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    transition: opacity 0.2s;
 }
 
 button:hover {
     opacity: 0.85;
 }
 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Status Message */
+
+#message {
+    font-size: 14px;
+    margin: 15px 0;
+    overflow-wrap: anywhere;
+}
+
+/* Employee Table */
+
 .table-container {
     overflow-x: auto;
     background: white;
     border-radius: 10px;
+    box-shadow: 0 2px 8px #0001;
 }
 
 table {
@@ -90,20 +137,35 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     padding: 13px;
     text-align: left;
     border-bottom: 1px solid #e5e9f1;
+    font-size: 14px;
 }
 
 th {
     background: #eaf0fb;
+    color: #243b64;
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background: #f8faff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
 }
 
 td button {
-    padding: 7px;
+    padding: 7px 10px;
     margin: 2px;
+    font-size: 12px;
 }
+
+/* Buttons */
 
 .cancel {
     background: #68758a;
@@ -119,6 +181,12 @@ td button {
     margin-top: 18px;
 }
 
+.buttons button {
+    flex: 1;
+}
+
+/* Pagination */
+
 .pagination {
     display: flex;
     gap: 7px;
@@ -127,9 +195,20 @@ td button {
     margin: 20px;
 }
 
+.pagination button {
+    min-width: 38px;
+}
+
 .pagination button.active {
     background: #172747;
 }
+
+.pagination button:disabled {
+    background: #aab3c4;
+    cursor: not-allowed;
+}
+
+/* Modal */
 
 .modal {
     display: none;
@@ -150,12 +229,20 @@ td button {
     max-width: 500px;
     max-height: 90vh;
     overflow-y: auto;
+    box-shadow: 0 10px 35px #0003;
+    animation: modalOpen 0.2s ease;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #243b64;
 }
 
 .modal-content label {
     display: block;
     margin-top: 12px;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .modal-content input,
@@ -164,19 +251,71 @@ td button {
     margin-top: 5px;
 }
 
+.modal-content > button {
+    margin-top: 10px;
+}
+
+#detailsContent p {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e9f1;
+    overflow-wrap: anywhere;
+}
+
+#detailsContent ul {
+    padding-left: 22px;
+}
+
+#detailsContent li {
+    margin: 8px 0;
+}
+
+/* Modal Animation */
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet */
+
 @media (max-width: 900px) {
     .dashboard {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .container {
+        padding: 16px;
+    }
+
+    .toolbar input {
+        min-width: 180px;
+    }
 }
 
+/* Mobile */
+
 @media (max-width: 550px) {
+    header {
+        padding: 16px;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
     .container {
         padding: 12px;
     }
 
     .dashboard {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 9px;
     }
 
@@ -184,11 +323,49 @@ td button {
         padding: 12px;
     }
 
+    .card h3 {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
     .card h2 {
         font-size: 23px;
     }
 
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
     .toolbar > * {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .table-container {
+        border-radius: 7px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+    .pagination {
+        margin: 15px 0;
+    }
+
+    .modal-content {
+        padding: 18px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
         width: 100%;
     }
 }

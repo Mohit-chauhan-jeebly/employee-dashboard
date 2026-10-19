@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="employe.css">
+    <script src="employee.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Employee Dashboard</h1>
+</header>
+
+<div class="container">
+
+    <div class="dashboard">
+        <div class="card">
+            <h3>Total Employees</h3>
+            <h2 id="total">0</h2>
+        </div>
+        <div class="card">
+            <h3>Active Employees</h3>
+            <h2 id="active">0</h2>
+        </div>
+        <div class="card">
+            <h3>Active Projects</h3>
+            <h2 id="projects">0</h2>
+        </div>
+        <div class="card">
+            <h3>Unassigned Employees</h3>
+            <h2 id="unassigned">0</h2>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <select id="searchBy">
+            <option value="name">Search By: Employee Name</option>
+            <option value="email">Search By: Email</option>
+        </select>
+
+        <input id="search" placeholder="Search employee">
+
+        <select id="department">
+            <option value="">All Departments</option>
+            <option>Engineering</option>
+            <option>Finance</option>
+            <option>HR</option>
+            <option>Marketing</option>
+        </select>
+
+        <select id="statusFilter">
+            <option value="">All Status</option>
+            <option>Active</option>
+            <option>Inactive</option>
+        </select>
+
+        <select id="projectFilter">
+            <option value="">All Project Status</option>
+            <option>In Progress</option>
+            <option>Active</option>
+            <option>Completed</option>
+            <option>Unassigned</option>
+        </select>
+
+        <select id="sort">
+            <option value="name">Employee Name</option>
+            <option value="projects">Number of Projects</option>
+            <option value="joiningDate">Joining Date</option>
+            <option value="status">Status</option>
+        </select>
+
+        <select id="direction">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+
+        <button type="button" onclick="openAdd()">+ Add Employee</button>
+    </div>
+
+    <p id="message">Loading employees...</p>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Projects</th>
+                    <th>Status</th>
+                    <th>Joining Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable"></tbody>
+        </table>
+    </div>
+
+    <div id="pagination" class="pagination"></div>
+</div>
+
+<div id="formModal" class="modal">
+    <div class="modal-content">
+        <h2 id="formTitle">Add Employee</h2>
+
+        <form id="employeeForm">
+            <label for="name">Name</label>
+            <input id="name" required minlength="3">
+
+            <label for="email">Email</label>
+            <input id="email" type="email" required>
+
+            <label for="mobile">Mobile</label>
+            <input id="mobile" type="tel"
+                   pattern="[0-9]{10}" maxlength="10" required>
+
+            <label for="formDepartment">Department</label>
+            <select id="formDepartment" required>
+                <option value="">Select Department</option>
+                <option>Engineering</option>
+                <option>Finance</option>
+                <option>HR</option>
+                <option>Marketing</option>
+            </select>
+
+            <label for="joiningDate">Joining Date</label>
+            <input id="joiningDate" type="date" required>
+
+            <label for="formStatus">Status</label>
+            <select id="formStatus">
+                <option>Active</option>
+                <option>Inactive</option>
+            </select>
+
+            <label for="projectInput">Projects (comma separated)</label>
+            <input id="projectInput" placeholder="Project A, Project B">
+
+            <div class="buttons">
+                <button type="button" class="cancel"
+                        onclick="closeModal()">Cancel</button>
+                <button type="submit">Save Employee</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="detailsModal" class="modal">
+    <div class="modal-content">
+        <h2>Employee Details</h2>
+        <div id="detailsContent"></div>
+        <button type="button" onclick="closeDetails()">Close</button>
+    </div>
+</div>
+
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <h2>Delete Employee</h2>
+        <p>Are you sure you want to delete this employee?</p>
+        <button type="button" class="cancel" onclick="closeDelete()">Cancel</button>
+        <button type="button" class="delete" onclick="confirmDelete()">Delete</button>
+    </div>
+</div>
+
+<script src="employee.js"></script>
+</body>
+</html>

@@ -5,88 +5,85 @@ let editingId = null;
 let deletingId = null;
 let currentPage = 1;
 const pageSize = 10;
-let localMode = true;
+let isLoading = false;
 
-const demoData = [
-    {
-        id: 1,
-        name: "John Smith",
-        email: "john@gmail.com",
-        mobile: "9876543210",
-        department: "Engineering",
-        status: "Active",
-        joiningDate: "2026-01-12",
-        projects: [
-            { name: "Project A", status: "Active" },
-            { name: "Project B", status: "Completed" },
-            { name: "Project C", status: "Active" }
-        ]
-    },
-    {
-        id: 2,
-        name: "David Lee",
-        email: "david@gmail.com",
-        mobile: "9876543211",
-        department: "Finance",
-        status: "Active",
-        joiningDate: "2025-11-10",
-        projects: [
-            { name: "Finance App", status: "In Progress" },
-            { name: "Reports", status: "Completed" }
-        ]
-    },
-    {
-        id: 3,
-        name: "Sarah Khan",
-        email: "sarah@gmail.com",
-        mobile: "9876543212",
-        department: "HR",
-        status: "Inactive",
-        joiningDate: "2025-08-20",
-        projects: [
-            { name: "Hiring Portal", status: "Completed" }
-        ]
-    }
-];
+const $ = id => document.getElementById(id);
 
-function normalizeEmployee(e) {
+function normalizeEmployee(e = {}) {
     return {
         ...e,
-        joiningDate: e.joiningDate || "",
+        id: e.id ?? e._id,
+        name: String(e.name ?? e.employeeName ?? ""),
+        email: String(e.email ?? ""),
+        mobile: String(e.mobile ?? e.phone ?? ""),
+        department: String(e.department ?? ""),
+        status: String(e.status ?? "Active"),
+        joiningDate: String(e.joiningDate ?? e.joining_date ?? "").slice(0, 10),
         projects: Array.isArray(e.projects)
             ? e.projects.map(p =>
                 typeof p === "string"
                     ? { name: p, status: "In Progress" }
-                    : p
-              )
+                    : {
+                        name: String(p?.name ?? p?.title ?? ""),
+                        status: String(p?.status ?? "In Progress")
+                    }
+            )
             : []
     };
 }
 
-// API FUNCTIONS
 async function apiRequest(url, options = {}) {
     const response = await fetch(url, {
         ...options,
         headers: {
-            "Content-Type": "application/json",
+            ...(options.body ? {
+                "Content-Type": "application/json"
+            } : {}),
             ...(options.headers || {})
         }
     });
 
     if (!response.ok) {
-        throw new Error("API error: " + response.status);
+        let message = "";
+        try {
+            const data = await response.json();
+            message = data.message || data.error || "";
+        } catch (_) {}
+
+        throw new Error(message || `API error: ${response.status}`);
     }
 
     if (response.status === 204) return null;
-    return response.json();
+
+    const text = await response.text();
+    return text ? JSON.parse(text) : null;
 }
 
 async function getEmployees() {
-    return apiRequest(API_URL);
+    const result = await apiRequest(API_URL);
+    const data = Array.isArray(result)
+        ? result
+        : result?.data ?? result?.employees;
+
+    if (!Array.isArray(data)) {
+        throw new Error("Invalid employees API response.");
+    }
+
+    return data.map(normalizeEmployee);
 }
 
 async function getEmployeeById(id) {
-    return apiRequest(`${API_URL}/${id}`);
+    const result = await apiRequest(
+        `${API_URL}/${encodeURIComponent(id)}`
+    );
+
+    const employee = result?.data ?? result?.employee ?? result;
+
+    if (!employee || typeof employee !== "object" || Array.isArray(employee)) {
+        throw new Error("Invalid employee details response.");
+    }
+
+    return normalizeEmployee(employee);
 }
 
 async function createEmployee(employee) {
@@ -97,98 +94,104 @@ async function createEmployee(employee) {
 }
 
 async function updateEmployee(id, employee) {
-    return apiRequest(`${API_URL}/${id}`, {
+    return apiRequest(`${API_URL}/${encodeURIComponent(id)}`, {
         method: "PUT",
         body: JSON.stringify(employee)
     });
 }
 
 async function deleteEmployee(id) {
-    return apiRequest(`${API_URL}/${id}`, {
+    return apiRequest(`${API_URL}/${encodeURIComponent(id)}`, {
         method: "DELETE"
     });
 }
 
+function setMessage(message, error = false) {
+    $("message").textContent = message;
+    $("message").style.color = error ? "#dc3545" : "";
+}
+
+function setLoading(button, loading, normal, busy) {
+    if (!button) return;
+
+    button.disabled = loading;
+    button.textContent = loading ? busy : normal;
+}
+
 async function loadEmployees() {
-    document.getElementById("message").textContent =
-        "Loading employees...";
+    setMessage("Loading employees...");
+    $("employeeTable").innerHTML =
+        '<tr><td colspan="7">Loading employees...</td></tr>';
 
     try {
-        const data = await getEmployees();
-        if (!Array.isArray(data)) throw new Error("Invalid API data");
-
-        employees = data.map(normalizeEmployee);
-        localMode = false;
+        employees = await getEmployees();
+        currentPage = 1;
         render();
     } catch (error) {
-        localMode = true;
-        employees = demoData.map(e => ({
-            ...e,
-            projects: e.projects.map(p => ({ ...p }))
-        }));
-        render();
+        employees = [];
+        updateDashboard();
 
-        document.getElementById("message").innerHTML =
-            'API unavailable. Demo data shown. ' +
-            '<button onclick="loadEmployees()">Retry API</button>';
+        $("employeeTable").innerHTML =
+            '<tr><td colspan="7">Unable to load employees.</td></tr>';
+
+        $("pagination").innerHTML = "";
+
+        setMessage(
+            `${error.message}. Check that the API server is running.`,
+            true
+        );
     }
 }
 
 function updateDashboard() {
-    document.getElementById("total").textContent =
-        employees.length;
+    $("total").textContent = employees.length;
 
-    document.getElementById("active").textContent =
-        employees.filter(e => e.status === "Active").length;
+    $("active").textContent = employees.filter(
+        e => e.status.toLowerCase() === "active"
+    ).length;
 
-    document.getElementById("projects").textContent =
-        employees.reduce((sum, e) =>
-            sum + e.projects.filter(p =>
-                p.status === "Active" ||
-                p.status === "In Progress"
-            ).length, 0);
+    $("projects").textContent = employees.reduce(
+        (sum, e) => sum + e.projects.filter(
+            p => ["active", "in progress"].includes(
+                p.status.toLowerCase()
+            )
+        ).length,
+        0
+    );
 
-    document.getElementById("unassigned").textContent =
-        employees.filter(e => e.projects.length === 0).length;
+    $("unassigned").textContent = employees.filter(
+        e => e.projects.length === 0
+    ).length;
 }
 
 function getFilteredEmployees() {
-    const search = document.getElementById("search")
-        .value.toLowerCase().trim();
-
-    const department =
-        document.getElementById("department").value;
-
-    const status =
-        document.getElementById("statusFilter").value;
-
-    const projectStatus =
-        document.getElementById("projectFilter").value;
-
-    const sort = document.getElementById("sort").value;
-    const direction =
-        document.getElementById("direction").value === "asc" ? 1 : -1;
+    const search = $("search").value.toLowerCase().trim();
+    const searchBy = $("searchBy").value;
+    const department = $("department").value;
+    const status = $("statusFilter").value;
+    const projectStatus = $("projectFilter").value;
+    const sort = $("sort").value;
+    const direction = $("direction").value === "asc" ? 1 : -1;
 
     return employees.filter(e => {
-        const searchMatch =
-            e.name.toLowerCase().includes(search) ||
-            e.email.toLowerCase().includes(search);
+        const field = searchBy === "email" ? e.email : e.name;
 
-        const departmentMatch =
-            !department || e.department === department;
-
-        const statusMatch =
-            !status || e.status === status;
+        const searchMatch = field.toLowerCase().includes(search);
+        const departmentMatch = !department || e.department === department;
+        const statusMatch = !status || e.status === status;
 
         const projectMatch = !projectStatus ||
             (projectStatus === "Unassigned"
                 ? e.projects.length === 0
                 : e.projects.some(p => p.status === projectStatus));
 
-        return searchMatch && departmentMatch &&
-            statusMatch && projectMatch;
+        return searchMatch &&
+            departmentMatch &&
+            statusMatch &&
+            projectMatch;
     }).sort((a, b) => {
-        let x, y;
+        let x;
+        let y;
 
         if (sort === "projects") {
             x = a.projects.length;
@@ -197,8 +200,8 @@ function getFilteredEmployees() {
             x = a.joiningDate;
             y = b.joiningDate;
         } else if (sort === "status") {
-            x = a.status;
-            y = b.status;
+            x = a.status.toLowerCase();
+            y = b.status.toLowerCase();
         } else {
             x = a.name.toLowerCase();
             y = b.name.toLowerCase();
@@ -215,7 +218,7 @@ function safe(value) {
         ">": "&gt;",
         '"': "&quot;",
         "'": "&#39;"
-    }[char]));
+    })[char]);
 }
 
 function render() {
@@ -224,19 +227,16 @@ function render() {
     const filtered = getFilteredEmployees();
     const totalPages = Math.ceil(filtered.length / pageSize);
 
-    if (currentPage > totalPages) {
-        currentPage = Math.max(1, totalPages);
-    }
+    currentPage = Math.min(currentPage, Math.max(1, totalPages));
 
     const start = (currentPage - 1) * pageSize;
     const pageData = filtered.slice(start, start + pageSize);
-    const tbody = document.getElementById("employeeTable");
 
     if (!pageData.length) {
-        tbody.innerHTML =
+        $("employeeTable").innerHTML =
             '<tr><td colspan="7">No employees found.</td></tr>';
     } else {
-        tbody.innerHTML = pageData.map(e => `
+        $("employeeTable").innerHTML = pageData.map(e => `
             <tr>
                 <td>${safe(e.name)}</td>
                 <td>${safe(e.email)}</td>
@@ -254,12 +254,9 @@ function render() {
         `).join("");
     }
 
-    document.getElementById("message").textContent =
-        `${filtered.length} employee(s) found` +
-        (localMode ? " — Demo Mode" : "");
+    setMessage(`${filtered.length} employee(s) found`);
 
-    const pagination = document.getElementById("pagination");
-    pagination.innerHTML = "";
+    $("pagination").innerHTML = "";
 
     if (totalPages > 1) {
         addPage("Previous", currentPage - 1, currentPage === 1);
@@ -274,8 +271,10 @@ function render() {
 
 function addPage(label, page, disabled, active = false) {
     const button = document.createElement("button");
+
     button.textContent = label;
     button.disabled = disabled;
+
     if (active) button.classList.add("active");
 
     button.onclick = () => {
@@ -283,12 +282,19 @@ function addPage(label, page, disabled, active = false) {
         render();
     };
 
-    document.getElementById("pagination").appendChild(button);
+    $("pagination").appendChild(button);
 }
 
-["search", "department", "statusFilter",
- "projectFilter", "sort", "direction"].forEach(id => {
-    document.getElementById(id).addEventListener(
+[
+    "search",
+    "searchBy",
+    "department",
+    "statusFilter",
+    "projectFilter",
+    "sort",
+    "direction"
+].forEach(id => {
+    $(id).addEventListener(
         id === "search" ? "input" : "change",
         () => {
             currentPage = 1;
@@ -299,48 +305,60 @@ function addPage(label, page, disabled, active = false) {
 
 function openAdd() {
     editingId = null;
-    document.getElementById("employeeForm").reset();
-    document.getElementById("formTitle").textContent = "Add Employee";
-    document.getElementById("formModal").style.display = "flex";
+    $("employeeForm").reset();
+    $("formTitle").textContent = "Add Employee";
+    $("formModal").style.display = "flex";
 }
 
 function closeModal() {
-    document.getElementById("formModal").style.display = "none";
+    $("formModal").style.display = "none";
 }
 
 function closeDetails() {
-    document.getElementById("detailsModal").style.display = "none";
+    $("detailsModal").style.display = "none";
 }
 
 function closeDelete() {
-    document.getElementById("deleteModal").style.display = "none";
+    $("deleteModal").style.display = "none";
 }
 
-function editEmployee(id) {
-    const e = employees.find(x => String(x.id) === String(id));
-    if (!e) return;
+async function editEmployee(id) {
+    try {
+        setMessage("Loading employee details...");
 
-    editingId = e.id;
-    document.getElementById("formTitle").textContent = "Edit Employee";
-    document.getElementById("name").value = e.name;
-    document.getElementById("email").value = e.email;
-    document.getElementById("mobile").value = e.mobile || "";
-    document.getElementById("formDepartment").value = e.department;
-    document.getElementById("joiningDate").value = e.joiningDate;
-    document.getElementById("formStatus").value = e.status;
-    document.getElementById("projectInput").value =
-        e.projects.map(p => p.name).join(", ");
+        const e = await getEmployeeById(id);
 
-    document.getElementById("formModal").style.display = "flex";
+        editingId = e.id;
+
+        $("formTitle").textContent = "Edit Employee";
+        $("name").value = e.name;
+        $("email").value = e.email;
+        $("mobile").value = e.mobile;
+        $("formDepartment").value = e.department;
+        $("joiningDate").value = e.joiningDate;
+        $("formStatus").value = e.status;
+        $("projectInput").value = e.projects.map(p => p.name).join(", ");
+
+        $("formModal").style.display = "flex";
+        setMessage("Employee details loaded.");
+    } catch (error) {
+        alert(`Unable to fetch employee: ${error.message}`);
+        setMessage(error.message, true);
+    }
 }
 
-document.getElementById("employeeForm")
-.addEventListener("submit", async event => {
+$("employeeForm").addEventListener("submit", async event => {
     event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const mobile = document.getElementById("mobile").value.trim();
+    if (isLoading) return;
+
+    const saveButton = $("employeeForm").querySelector(
+        'button[type="submit"]'
+    );
+
+    const name = $("name").value.trim();
+    const email = $("email").value.trim();
+    const mobile = $("mobile").value.trim();
 
     if (name.length < 3) {
         alert("Name must contain at least 3 characters.");
@@ -357,103 +375,137 @@ document.getElementById("employeeForm")
         return;
     }
 
-    if (employees.some(e =>
+    const duplicate = employees.some(e =>
         e.email.toLowerCase() === email.toLowerCase() &&
         String(e.id) !== String(editingId)
-    )) {
+    );
+
+    if (duplicate) {
         alert("Email already exists.");
         return;
     }
 
-    const old = employees.find(e =>
-        String(e.id) === String(editingId));
+    const oldEmployee = employees.find(
+        e => String(e.id) === String(editingId)
+    );
 
-    const projectNames = document.getElementById("projectInput")
-        .value.split(",").map(p => p.trim()).filter(Boolean);
+    const projectNames = $("projectInput").value
+        .split(",")
+        .map(p => p.trim())
+        .filter(Boolean);
 
     const employee = {
         name,
         email,
         mobile,
-        department: document.getElementById("formDepartment").value,
-        joiningDate: document.getElementById("joiningDate").value,
-        status: document.getElementById("formStatus").value,
-        projects: projectNames.map(name => {
-            const previous = old?.projects.find(p => p.name === name);
-            return previous || { name, status: "In Progress" };
+        department: $("formDepartment").value,
+        joiningDate: $("joiningDate").value,
+        status: $("formStatus").value,
+        projects: projectNames.map(projectName => {
+            const previous = oldEmployee?.projects.find(
+                p => p.name === projectName
+            );
+
+            return previous || {
+                name: projectName,
+                status: "In Progress"
+            };
         })
     };
 
+    const wasEditing = editingId !== null;
+
+    isLoading = true;
+    setLoading(saveButton, true, "Save Employee", "Saving...");
+    setMessage(wasEditing ? "Updating employee..." : "Adding employee...");
+
     try {
-        if (localMode) {
-            if (editingId !== null) {
-                employees = employees.map(e =>
-                    String(e.id) === String(editingId)
-                        ? { ...employee, id: editingId }
-                        : e
-                );
-            } else {
-                employees.push({ ...employee, id: Date.now() });
-            }
+        if (wasEditing) {
+            await updateEmployee(editingId, employee);
         } else {
-            if (editingId !== null) {
-                await updateEmployee(editingId, employee);
-            } else {
-                await createEmployee(employee);
-            }
-            employees = (await getEmployees()).map(normalizeEmployee);
+            await createEmployee(employee);
         }
 
+        employees = await getEmployees();
+
         closeModal();
+        editingId = null;
         currentPage = 1;
         render();
+
+        setMessage(
+            wasEditing
+                ? "Employee updated successfully."
+                : "Employee added successfully."
+        );
     } catch (error) {
-        alert("Unable to save. Check your API connection.");
+        setMessage(`Save failed: ${error.message}`, true);
+        alert(`Unable to save employee: ${error.message}`);
+    } finally {
+        isLoading = false;
+        setLoading(saveButton, false, "Save Employee", "Saving...");
     }
 });
 
-function viewEmployee(id) {
-    const e = employees.find(x => String(x.id) === String(id));
-    if (!e) return;
+async function viewEmployee(id) {
+    $("detailsContent").innerHTML = "<p>Loading employee details...</p>";
+    $("detailsModal").style.display = "flex";
 
-    document.getElementById("detailsContent").innerHTML = `
-        <p><b>Name:</b> ${safe(e.name)}</p>
-        <p><b>Email:</b> ${safe(e.email)}</p>
-        <p><b>Mobile:</b> ${safe(e.mobile)}</p>
-        <p><b>Department:</b> ${safe(e.department)}</p>
-        <p><b>Joining Date:</b> ${safe(e.joiningDate)}</p>
-        <p><b>Status:</b> ${safe(e.status)}</p>
-        <h3>Projects</h3>
-        <ul>${e.projects.length
-            ? e.projects.map(p =>
-                `<li>${safe(p.name)} — ${safe(p.status)}</li>`
-              ).join("")
-            : "<li>No projects assigned</li>"}
-        </ul>
-    `;
+    try {
+        const e = await getEmployeeById(id);
 
-    document.getElementById("detailsModal").style.display = "flex";
+        $("detailsContent").innerHTML = `
+            <p><b>Name:</b> ${safe(e.name)}</p>
+            <p><b>Email:</b> ${safe(e.email)}</p>
+            <p><b>Mobile:</b> ${safe(e.mobile)}</p>
+            <p><b>Department:</b> ${safe(e.department)}</p>
+            <p><b>Joining Date:</b> ${safe(e.joiningDate)}</p>
+            <p><b>Status:</b> ${safe(e.status)}</p>
+            <h3>Projects</h3>
+            <ul>
+                ${e.projects.length
+                    ? e.projects.map(p =>
+                        `<li>${safe(p.name)} — ${safe(p.status)}</li>`
+                    ).join("")
+                    : "<li>No projects assigned</li>"
+                }
+            </ul>
+        `;
+    } catch (error) {
+        $("detailsContent").innerHTML =
+            `<p>Unable to load details: ${safe(error.message)}</p>`;
+    }
 }
 
 function askDelete(id) {
     deletingId = id;
-    document.getElementById("deleteModal").style.display = "flex";
+    $("deleteModal").style.display = "flex";
 }
 
 async function confirmDelete() {
+    if (isLoading || deletingId === null) return;
+
+    const deleteButton = $("deleteModal").querySelector(".delete");
+
+    isLoading = true;
+    setLoading(deleteButton, true, "Delete", "Deleting...");
+    setMessage("Deleting employee...");
+
     try {
-        if (localMode) {
-            employees = employees.filter(e =>
-                String(e.id) !== String(deletingId));
-        } else {
-            await deleteEmployee(deletingId);
-            employees = (await getEmployees()).map(normalizeEmployee);
-        }
+        await deleteEmployee(deletingId);
+        employees = await getEmployees();
 
         closeDelete();
+        deletingId = null;
         render();
+
+        setMessage("Employee deleted successfully.");
     } catch (error) {
-        alert("Unable to delete employee. Check your API connection.");
+        setMessage(`Delete failed: ${error.message}`, true);
+        alert(`Unable to delete employee: ${error.message}`);
+    } finally {
+        isLoading = false;
+        setLoading(deleteButton, false, "Delete", "Deleting...");
     }
 }
 

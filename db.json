@@ -1,0 +1,50 @@
+{
+  "employees": [
+    {
+      "name": "Mohit Sharma",
+      "email": "mohit@example.com",
+      "mobile": "9876543210",
+      "department": "Finance",
+      "joiningDate": "2025-01-15",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Dashboard",
+          "status": "In Progress"
+        }
+      ],
+      "id": "1"
+    },
+    {
+      "name": "rahul",
+      "email": "rahul@gmail.com",
+      "mobile": "7878787878",
+      "department": "Finance",
+      "joiningDate": "2026-10-11",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "project b",
+          "status": "In Progress"
+        }
+      ],
+      "id": "zIgf5RJtc4E"
+    },
+    {
+      "name": "rahul",
+      "email": "revi@gmail.com",
+      "mobile": "7878787878",
+      "department": "Engineering",
+      "joiningDate": "2026-10-11",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "project b",
+          "status": "In Progress"
+        }
+      ],
+      "id": "Pzzf_cq2lVk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
