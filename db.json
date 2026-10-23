@@ -1,25 +1,10 @@
 {
   "employees": [
     {
-      "name": "Mohit Sharma",
-      "email": "mohit@example.com",
-      "mobile": "9876543210",
-      "department": "Finance",
-      "joiningDate": "2025-01-15",
-      "status": "Active",
-      "projects": [
-        {
-          "name": "Dashboard",
-          "status": "In Progress"
-        }
-      ],
-      "id": "1"
-    },
-    {
       "name": "rahul",
       "email": "rahul@gmail.com",
       "mobile": "7878787878",
-      "department": "Finance",
+      "department": "Marketing",
       "joiningDate": "2026-10-11",
       "status": "Active",
       "projects": [
@@ -31,8 +16,23 @@
       "id": "zIgf5RJtc4E"
     },
     {
+      "name": "ravu",
+      "email": "rohit@example.com",
+      "mobile": "9876543210",
+      "department": "Finance",
+      "joiningDate": "2025-01-15",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Dashboard",
+          "status": "In Progress"
+        }
+      ],
+      "id": "BPTBWUE5-I0"
+    },
+    {
       "name": "rahul",
-      "email": "revi@gmail.com",
+      "email": "rahu@gmail.com",
       "mobile": "7878787878",
       "department": "Engineering",
       "joiningDate": "2026-10-11",
@@ -43,7 +43,7 @@
           "status": "In Progress"
         }
       ],
-      "id": "Pzzf_cq2lVk"
+      "id": "zuv3JxFZ4Aw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
