@@ -1,0 +1,1744 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Rahul",
+      "email": "rahul@gmail.com",
+      "mobile": "7878787878",
+      "department": "Marketing",
+      "joiningDate": "2026-10-11",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Project B",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ravi",
+      "email": "rohit@example.com",
+      "mobile": "9876543210",
+      "department": "Finance",
+      "joiningDate": "2025-01-15",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Dashboard",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "name": "Mohit Chauhan Jeebly",
+      "email": "mohit.chauhan@jeebly.com",
+      "mobile": "7864746464",
+      "department": "Marketing",
+      "joiningDate": "2026-10-04",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Project x",
+          "status": "In Progress"
+        }
+      ],
+      "id": "emp-1794635326399"
+    },
+    {
+      "name": "ravi",
+      "email": "ravi@gmail.com",
+      "mobile": "7828218271",
+      "department": "Sales",
+      "joiningDate": "2026-11-02",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Project B",
+          "status": "Pending"
+        }
+      ],
+      "id": "emp-1794707327528"
+    },
+    {
+      "name": "akash",
+      "email": "akash@gmail.com",
+      "mobile": "9292929292",
+      "department": "Engineering",
+      "joiningDate": "2026-11-06",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Project B",
+          "status": "In Progress"
+        }
+      ],
+      "id": "emp-1794709101213"
+    },
+    {
+      "id": "emp-006",
+      "name": "Aarav Singh",
+      "email": "employee006@jeebly-demo.com",
+      "mobile": "7000000006",
+      "department": "Engineering",
+      "joiningDate": "2024-01-01",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-007",
+      "name": "Vivaan Patel",
+      "email": "employee007@jeebly-demo.com",
+      "mobile": "7000000007",
+      "department": "Marketing",
+      "joiningDate": "2025-02-02",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-008",
+      "name": "Aditya Joshi",
+      "email": "employee008@jeebly-demo.com",
+      "mobile": "7000000008",
+      "department": "Sales",
+      "joiningDate": "2026-03-03",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-009",
+      "name": "Vihaan Kumar",
+      "email": "employee009@jeebly-demo.com",
+      "mobile": "7000000009",
+      "department": "Finance",
+      "joiningDate": "2024-04-04",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-010",
+      "name": "Arjun Reddy",
+      "email": "employee010@jeebly-demo.com",
+      "mobile": "7000000010",
+      "department": "Human Resources",
+      "joiningDate": "2025-05-05",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-011",
+      "name": "Reyansh Nair",
+      "email": "employee011@jeebly-demo.com",
+      "mobile": "7000000011",
+      "department": "Operations",
+      "joiningDate": "2026-06-06",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-012",
+      "name": "Muhammad Mehta",
+      "email": "employee012@jeebly-demo.com",
+      "mobile": "7000000012",
+      "department": "Customer Support",
+      "joiningDate": "2024-07-07",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-013",
+      "name": "Sai Das",
+      "email": "employee013@jeebly-demo.com",
+      "mobile": "7000000013",
+      "department": "IT",
+      "joiningDate": "2025-08-08",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-014",
+      "name": "Ayaan Agarwal",
+      "email": "employee014@jeebly-demo.com",
+      "mobile": "7000000014",
+      "department": "Engineering",
+      "joiningDate": "2026-09-09",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-015",
+      "name": "Krishna Yadav",
+      "email": "employee015@jeebly-demo.com",
+      "mobile": "7000000015",
+      "department": "Marketing",
+      "joiningDate": "2024-10-10",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-016",
+      "name": "Ishaan Kapoor",
+      "email": "employee016@jeebly-demo.com",
+      "mobile": "7000000016",
+      "department": "Sales",
+      "joiningDate": "2025-11-11",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-017",
+      "name": "Shaurya Sharma",
+      "email": "employee017@jeebly-demo.com",
+      "mobile": "7000000017",
+      "department": "Finance",
+      "joiningDate": "2026-12-12",
+      "status": "Active",
+      "projects": []
+    },
+    {
+      "id": "emp-018",
+      "name": "Atharv Malhotra",
+      "email": "employee018@jeebly-demo.com",
+      "mobile": "7000000018",
+      "department": "Human Resources",
+      "joiningDate": "2024-01-13",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-019",
+      "name": "Kabir Mishra",
+      "email": "employee019@jeebly-demo.com",
+      "mobile": "7000000019",
+      "department": "Operations",
+      "joiningDate": "2025-02-14",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-020",
+      "name": "Rudra Verma",
+      "email": "employee020@jeebly-demo.com",
+      "mobile": "7000000020",
+      "department": "Customer Support",
+      "joiningDate": "2026-03-15",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-021",
+      "name": "Anaya Jain",
+      "email": "employee021@jeebly-demo.com",
+      "mobile": "7000000021",
+      "department": "IT",
+      "joiningDate": "2024-04-16",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-022",
+      "name": "Diya Bansal",
+      "email": "employee022@jeebly-demo.com",
+      "mobile": "7000000022",
+      "department": "Engineering",
+      "joiningDate": "2025-05-17",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-023",
+      "name": "Aadhya Gupta",
+      "email": "employee023@jeebly-demo.com",
+      "mobile": "7000000023",
+      "department": "Marketing",
+      "joiningDate": "2026-06-18",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-024",
+      "name": "Saanvi Chauhan",
+      "email": "employee024@jeebly-demo.com",
+      "mobile": "7000000024",
+      "department": "Sales",
+      "joiningDate": "2024-07-19",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-025",
+      "name": "Pari Saxena",
+      "email": "employee025@jeebly-demo.com",
+      "mobile": "7000000025",
+      "department": "Finance",
+      "joiningDate": "2025-08-20",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-026",
+      "name": "Ira Singh",
+      "email": "employee026@jeebly-demo.com",
+      "mobile": "7000000026",
+      "department": "Human Resources",
+      "joiningDate": "2026-09-21",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-027",
+      "name": "Myra Patel",
+      "email": "employee027@jeebly-demo.com",
+      "mobile": "7000000027",
+      "department": "Operations",
+      "joiningDate": "2024-10-22",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-028",
+      "name": "Sara Joshi",
+      "email": "employee028@jeebly-demo.com",
+      "mobile": "7000000028",
+      "department": "Customer Support",
+      "joiningDate": "2025-11-23",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-029",
+      "name": "Aarohi Kumar",
+      "email": "employee029@jeebly-demo.com",
+      "mobile": "7000000029",
+      "department": "IT",
+      "joiningDate": "2026-12-24",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-030",
+      "name": "Kiara Reddy",
+      "email": "employee030@jeebly-demo.com",
+      "mobile": "7000000030",
+      "department": "Engineering",
+      "joiningDate": "2024-01-25",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-031",
+      "name": "Riya Nair",
+      "email": "employee031@jeebly-demo.com",
+      "mobile": "7000000031",
+      "department": "Marketing",
+      "joiningDate": "2025-02-26",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-032",
+      "name": "Meera Mehta",
+      "email": "employee032@jeebly-demo.com",
+      "mobile": "7000000032",
+      "department": "Sales",
+      "joiningDate": "2026-03-27",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-033",
+      "name": "Navya Das",
+      "email": "employee033@jeebly-demo.com",
+      "mobile": "7000000033",
+      "department": "Finance",
+      "joiningDate": "2024-04-01",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-034",
+      "name": "Anika Agarwal",
+      "email": "employee034@jeebly-demo.com",
+      "mobile": "7000000034",
+      "department": "Human Resources",
+      "joiningDate": "2025-05-02",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-035",
+      "name": "Tara Yadav",
+      "email": "employee035@jeebly-demo.com",
+      "mobile": "7000000035",
+      "department": "Operations",
+      "joiningDate": "2026-06-03",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-036",
+      "name": "Aarav Kapoor",
+      "email": "employee036@jeebly-demo.com",
+      "mobile": "7000000036",
+      "department": "Customer Support",
+      "joiningDate": "2024-07-04",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-037",
+      "name": "Vivaan Sharma",
+      "email": "employee037@jeebly-demo.com",
+      "mobile": "7000000037",
+      "department": "IT",
+      "joiningDate": "2025-08-05",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-038",
+      "name": "Aditya Malhotra",
+      "email": "employee038@jeebly-demo.com",
+      "mobile": "7000000038",
+      "department": "Engineering",
+      "joiningDate": "2026-09-06",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "In Progress"
+        }
+      ]
+    },
+    {
+      "id": "emp-039",
+      "name": "Vihaan Mishra",
+      "email": "employee039@jeebly-demo.com",
+      "mobile": "7000000039",
+      "department": "Marketing",
+      "joiningDate": "2024-10-07",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-040",
+      "name": "Arjun Verma",
+      "email": "employee040@jeebly-demo.com",
+      "mobile": "7000000040",
+      "department": "Sales",
+      "joiningDate": "2025-11-08",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-041",
+      "name": "Reyansh Jain",
+      "email": "employee041@jeebly-demo.com",
+      "mobile": "7000000041",
+      "department": "Finance",
+      "joiningDate": "2026-12-09",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-042",
+      "name": "Muhammad Bansal",
+      "email": "employee042@jeebly-demo.com",
+      "mobile": "7000000042",
+      "department": "Human Resources",
+      "joiningDate": "2024-01-10",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-043",
+      "name": "Sai Gupta",
+      "email": "employee043@jeebly-demo.com",
+      "mobile": "7000000043",
+      "department": "Operations",
+      "joiningDate": "2025-02-11",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-044",
+      "name": "Ayaan Chauhan",
+      "email": "employee044@jeebly-demo.com",
+      "mobile": "7000000044",
+      "department": "Customer Support",
+      "joiningDate": "2026-03-12",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-045",
+      "name": "Krishna Saxena",
+      "email": "employee045@jeebly-demo.com",
+      "mobile": "7000000045",
+      "department": "IT",
+      "joiningDate": "2024-04-13",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-046",
+      "name": "Ishaan Singh",
+      "email": "employee046@jeebly-demo.com",
+      "mobile": "7000000046",
+      "department": "Engineering",
+      "joiningDate": "2025-05-14",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-047",
+      "name": "Shaurya Patel",
+      "email": "employee047@jeebly-demo.com",
+      "mobile": "7000000047",
+      "department": "Marketing",
+      "joiningDate": "2026-06-15",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-048",
+      "name": "Atharv Joshi",
+      "email": "employee048@jeebly-demo.com",
+      "mobile": "7000000048",
+      "department": "Sales",
+      "joiningDate": "2024-07-16",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-049",
+      "name": "Kabir Kumar",
+      "email": "employee049@jeebly-demo.com",
+      "mobile": "7000000049",
+      "department": "Finance",
+      "joiningDate": "2025-08-17",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-050",
+      "name": "Rudra Reddy",
+      "email": "employee050@jeebly-demo.com",
+      "mobile": "7000000050",
+      "department": "Human Resources",
+      "joiningDate": "2026-09-18",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-051",
+      "name": "Anaya Nair",
+      "email": "employee051@jeebly-demo.com",
+      "mobile": "7000000051",
+      "department": "Operations",
+      "joiningDate": "2024-10-19",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-052",
+      "name": "Diya Mehta",
+      "email": "employee052@jeebly-demo.com",
+      "mobile": "7000000052",
+      "department": "Customer Support",
+      "joiningDate": "2025-11-20",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-053",
+      "name": "Aadhya Das",
+      "email": "employee053@jeebly-demo.com",
+      "mobile": "7000000053",
+      "department": "IT",
+      "joiningDate": "2026-12-21",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-054",
+      "name": "Saanvi Agarwal",
+      "email": "employee054@jeebly-demo.com",
+      "mobile": "7000000054",
+      "department": "Engineering",
+      "joiningDate": "2024-01-22",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-055",
+      "name": "Pari Yadav",
+      "email": "employee055@jeebly-demo.com",
+      "mobile": "7000000055",
+      "department": "Marketing",
+      "joiningDate": "2025-02-23",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-056",
+      "name": "Ira Kapoor",
+      "email": "employee056@jeebly-demo.com",
+      "mobile": "7000000056",
+      "department": "Sales",
+      "joiningDate": "2026-03-24",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-057",
+      "name": "Myra Sharma",
+      "email": "employee057@jeebly-demo.com",
+      "mobile": "7000000057",
+      "department": "Finance",
+      "joiningDate": "2024-04-25",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-058",
+      "name": "Sara Malhotra",
+      "email": "employee058@jeebly-demo.com",
+      "mobile": "7000000058",
+      "department": "Human Resources",
+      "joiningDate": "2025-05-26",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-059",
+      "name": "Aarohi Mishra",
+      "email": "employee059@jeebly-demo.com",
+      "mobile": "7000000059",
+      "department": "Operations",
+      "joiningDate": "2026-06-27",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-060",
+      "name": "Kiara Verma",
+      "email": "employee060@jeebly-demo.com",
+      "mobile": "7000000060",
+      "department": "Customer Support",
+      "joiningDate": "2024-07-01",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-061",
+      "name": "Riya Jain",
+      "email": "employee061@jeebly-demo.com",
+      "mobile": "7000000061",
+      "department": "IT",
+      "joiningDate": "2025-08-02",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-062",
+      "name": "Meera Bansal",
+      "email": "employee062@jeebly-demo.com",
+      "mobile": "7000000062",
+      "department": "Engineering",
+      "joiningDate": "2026-09-03",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-063",
+      "name": "Navya Gupta",
+      "email": "employee063@jeebly-demo.com",
+      "mobile": "7000000063",
+      "department": "Marketing",
+      "joiningDate": "2024-10-04",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-064",
+      "name": "Anika Chauhan",
+      "email": "employee064@jeebly-demo.com",
+      "mobile": "7000000064",
+      "department": "Sales",
+      "joiningDate": "2025-11-05",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-065",
+      "name": "Tara Saxena",
+      "email": "employee065@jeebly-demo.com",
+      "mobile": "7000000065",
+      "department": "Finance",
+      "joiningDate": "2026-12-06",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-066",
+      "name": "Aarav Singh",
+      "email": "employee066@jeebly-demo.com",
+      "mobile": "7000000066",
+      "department": "Human Resources",
+      "joiningDate": "2024-01-07",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-067",
+      "name": "Vivaan Patel",
+      "email": "employee067@jeebly-demo.com",
+      "mobile": "7000000067",
+      "department": "Operations",
+      "joiningDate": "2025-02-08",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-068",
+      "name": "Aditya Joshi",
+      "email": "employee068@jeebly-demo.com",
+      "mobile": "7000000068",
+      "department": "Customer Support",
+      "joiningDate": "2026-03-09",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-069",
+      "name": "Vihaan Kumar",
+      "email": "employee069@jeebly-demo.com",
+      "mobile": "7000000069",
+      "department": "IT",
+      "joiningDate": "2024-04-10",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-070",
+      "name": "Arjun Reddy",
+      "email": "employee070@jeebly-demo.com",
+      "mobile": "7000000070",
+      "department": "Engineering",
+      "joiningDate": "2025-05-11",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-071",
+      "name": "Reyansh Nair",
+      "email": "employee071@jeebly-demo.com",
+      "mobile": "7000000071",
+      "department": "Marketing",
+      "joiningDate": "2026-06-12",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-072",
+      "name": "Muhammad Mehta",
+      "email": "employee072@jeebly-demo.com",
+      "mobile": "7000000072",
+      "department": "Sales",
+      "joiningDate": "2024-07-13",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-073",
+      "name": "Sai Das",
+      "email": "employee073@jeebly-demo.com",
+      "mobile": "7000000073",
+      "department": "Finance",
+      "joiningDate": "2025-08-14",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-074",
+      "name": "Ayaan Agarwal",
+      "email": "employee074@jeebly-demo.com",
+      "mobile": "7000000074",
+      "department": "Human Resources",
+      "joiningDate": "2026-09-15",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-075",
+      "name": "Krishna Yadav",
+      "email": "employee075@jeebly-demo.com",
+      "mobile": "7000000075",
+      "department": "Operations",
+      "joiningDate": "2024-10-16",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-076",
+      "name": "Ishaan Kapoor",
+      "email": "employee076@jeebly-demo.com",
+      "mobile": "7000000076",
+      "department": "Customer Support",
+      "joiningDate": "2025-11-17",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-077",
+      "name": "Shaurya Sharma",
+      "email": "employee077@jeebly-demo.com",
+      "mobile": "7000000077",
+      "department": "IT",
+      "joiningDate": "2026-12-18",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-078",
+      "name": "Atharv Malhotra",
+      "email": "employee078@jeebly-demo.com",
+      "mobile": "7000000078",
+      "department": "Engineering",
+      "joiningDate": "2024-01-19",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-079",
+      "name": "Kabir Mishra",
+      "email": "employee079@jeebly-demo.com",
+      "mobile": "7000000079",
+      "department": "Marketing",
+      "joiningDate": "2025-02-20",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-080",
+      "name": "Rudra Verma",
+      "email": "employee080@jeebly-demo.com",
+      "mobile": "7000000080",
+      "department": "Sales",
+      "joiningDate": "2026-03-21",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-081",
+      "name": "Anaya Jain",
+      "email": "employee081@jeebly-demo.com",
+      "mobile": "7000000081",
+      "department": "Finance",
+      "joiningDate": "2024-04-22",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-082",
+      "name": "Diya Bansal",
+      "email": "employee082@jeebly-demo.com",
+      "mobile": "7000000082",
+      "department": "Human Resources",
+      "joiningDate": "2025-05-23",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-083",
+      "name": "Aadhya Gupta",
+      "email": "employee083@jeebly-demo.com",
+      "mobile": "7000000083",
+      "department": "Operations",
+      "joiningDate": "2026-06-24",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-084",
+      "name": "Saanvi Chauhan",
+      "email": "employee084@jeebly-demo.com",
+      "mobile": "7000000084",
+      "department": "Customer Support",
+      "joiningDate": "2024-07-25",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-085",
+      "name": "Pari Saxena",
+      "email": "employee085@jeebly-demo.com",
+      "mobile": "7000000085",
+      "department": "IT",
+      "joiningDate": "2025-08-26",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-086",
+      "name": "Ira Singh",
+      "email": "employee086@jeebly-demo.com",
+      "mobile": "7000000086",
+      "department": "Engineering",
+      "joiningDate": "2026-09-27",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-087",
+      "name": "Myra Patel",
+      "email": "employee087@jeebly-demo.com",
+      "mobile": "7000000087",
+      "department": "Marketing",
+      "joiningDate": "2024-10-01",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-088",
+      "name": "Sara Joshi",
+      "email": "employee088@jeebly-demo.com",
+      "mobile": "7000000088",
+      "department": "Sales",
+      "joiningDate": "2025-11-02",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-089",
+      "name": "Aarohi Kumar",
+      "email": "employee089@jeebly-demo.com",
+      "mobile": "7000000089",
+      "department": "Finance",
+      "joiningDate": "2026-12-03",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-090",
+      "name": "Kiara Reddy",
+      "email": "employee090@jeebly-demo.com",
+      "mobile": "7000000090",
+      "department": "Human Resources",
+      "joiningDate": "2024-01-04",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-091",
+      "name": "Riya Nair",
+      "email": "employee091@jeebly-demo.com",
+      "mobile": "7000000091",
+      "department": "Operations",
+      "joiningDate": "2025-02-05",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-092",
+      "name": "Meera Mehta",
+      "email": "employee092@jeebly-demo.com",
+      "mobile": "7000000092",
+      "department": "Customer Support",
+      "joiningDate": "2026-03-06",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-093",
+      "name": "Navya Das",
+      "email": "employee093@jeebly-demo.com",
+      "mobile": "7000000093",
+      "department": "IT",
+      "joiningDate": "2024-04-07",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-094",
+      "name": "Anika Agarwal",
+      "email": "employee094@jeebly-demo.com",
+      "mobile": "7000000094",
+      "department": "Engineering",
+      "joiningDate": "2025-05-08",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-095",
+      "name": "Tara Yadav",
+      "email": "employee095@jeebly-demo.com",
+      "mobile": "7000000095",
+      "department": "Marketing",
+      "joiningDate": "2026-06-09",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-096",
+      "name": "Aarav Kapoor",
+      "email": "employee096@jeebly-demo.com",
+      "mobile": "7000000096",
+      "department": "Sales",
+      "joiningDate": "2024-07-10",
+      "status": "Active",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-097",
+      "name": "Vivaan Sharma",
+      "email": "employee097@jeebly-demo.com",
+      "mobile": "7000000097",
+      "department": "Finance",
+      "joiningDate": "2025-08-11",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-098",
+      "name": "Aditya Malhotra",
+      "email": "employee098@jeebly-demo.com",
+      "mobile": "7000000098",
+      "department": "Human Resources",
+      "joiningDate": "2026-09-12",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-099",
+      "name": "Vihaan Mishra",
+      "email": "employee099@jeebly-demo.com",
+      "mobile": "7000000099",
+      "department": "Operations",
+      "joiningDate": "2024-10-13",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-100",
+      "name": "Arjun Verma",
+      "email": "employee100@jeebly-demo.com",
+      "mobile": "7000000100",
+      "department": "Customer Support",
+      "joiningDate": "2025-11-14",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-101",
+      "name": "Reyansh Jain",
+      "email": "employee101@jeebly-demo.com",
+      "mobile": "7000000101",
+      "department": "IT",
+      "joiningDate": "2026-12-15",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-102",
+      "name": "Muhammad Bansal",
+      "email": "employee102@jeebly-demo.com",
+      "mobile": "7000000102",
+      "department": "Engineering",
+      "joiningDate": "2024-01-16",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-103",
+      "name": "Sai Gupta",
+      "email": "employee103@jeebly-demo.com",
+      "mobile": "7000000103",
+      "department": "Marketing",
+      "joiningDate": "2025-02-17",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-104",
+      "name": "Ayaan Chauhan",
+      "email": "employee104@jeebly-demo.com",
+      "mobile": "7000000104",
+      "department": "Sales",
+      "joiningDate": "2026-03-18",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-105",
+      "name": "Krishna Saxena",
+      "email": "employee105@jeebly-demo.com",
+      "mobile": "7000000105",
+      "department": "Finance",
+      "joiningDate": "2024-04-19",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-106",
+      "name": "Ishaan Singh",
+      "email": "employee106@jeebly-demo.com",
+      "mobile": "7000000106",
+      "department": "Human Resources",
+      "joiningDate": "2025-05-20",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-107",
+      "name": "Shaurya Patel",
+      "email": "employee107@jeebly-demo.com",
+      "mobile": "7000000107",
+      "department": "Operations",
+      "joiningDate": "2026-06-21",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-108",
+      "name": "Atharv Joshi",
+      "email": "employee108@jeebly-demo.com",
+      "mobile": "7000000108",
+      "department": "Customer Support",
+      "joiningDate": "2024-07-22",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-109",
+      "name": "Kabir Kumar",
+      "email": "employee109@jeebly-demo.com",
+      "mobile": "7000000109",
+      "department": "IT",
+      "joiningDate": "2025-08-23",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-110",
+      "name": "Rudra Reddy",
+      "email": "employee110@jeebly-demo.com",
+      "mobile": "7000000110",
+      "department": "Engineering",
+      "joiningDate": "2026-09-24",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-111",
+      "name": "Anaya Nair",
+      "email": "employee111@jeebly-demo.com",
+      "mobile": "7000000111",
+      "department": "Marketing",
+      "joiningDate": "2024-10-25",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "CRM Upgrade",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-112",
+      "name": "Diya Mehta",
+      "email": "employee112@jeebly-demo.com",
+      "mobile": "7000000112",
+      "department": "Sales",
+      "joiningDate": "2025-11-26",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Warehouse Automation",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-113",
+      "name": "Aadhya Das",
+      "email": "employee113@jeebly-demo.com",
+      "mobile": "7000000113",
+      "department": "Finance",
+      "joiningDate": "2026-12-27",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Mobile App",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-114",
+      "name": "Saanvi Agarwal",
+      "email": "employee114@jeebly-demo.com",
+      "mobile": "7000000114",
+      "department": "Human Resources",
+      "joiningDate": "2024-01-01",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "API Integration",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-115",
+      "name": "Pari Yadav",
+      "email": "employee115@jeebly-demo.com",
+      "mobile": "7000000115",
+      "department": "Operations",
+      "joiningDate": "2025-02-02",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Reporting System",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-116",
+      "name": "Ira Kapoor",
+      "email": "employee116@jeebly-demo.com",
+      "mobile": "7000000116",
+      "department": "Customer Support",
+      "joiningDate": "2026-03-03",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Employee Portal",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-117",
+      "name": "Myra Sharma",
+      "email": "employee117@jeebly-demo.com",
+      "mobile": "7000000117",
+      "department": "IT",
+      "joiningDate": "2024-04-04",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Delivery Tracking",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-118",
+      "name": "Sara Malhotra",
+      "email": "employee118@jeebly-demo.com",
+      "mobile": "7000000118",
+      "department": "Engineering",
+      "joiningDate": "2025-05-05",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Customer App",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "emp-119",
+      "name": "Aarohi Mishra",
+      "email": "employee119@jeebly-demo.com",
+      "mobile": "7000000119",
+      "department": "Marketing",
+      "joiningDate": "2026-06-06",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Analytics Dashboard",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "emp-120",
+      "name": "Kiara Verma",
+      "email": "employee120@jeebly-demo.com",
+      "mobile": "7000000120",
+      "department": "Sales",
+      "joiningDate": "2024-07-07",
+      "status": "Inactive",
+      "projects": [
+        {
+          "name": "Fleet Management",
+          "status": "Completed"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeebly Logistics | Day 3 - Employee Management</title>
+    <link rel="stylesheet" href="day3.css">
+</head>
+<body>
+ 
+<aside class="sidebar">
+    <h2>JEEBLY LOGISTICS</h2>
+    <p class="side-label">MAIN MENU</p>
+ 
+    <a href="../index.html">Dashboard</a>
+    <a href="../day1/day1.html">Day 1 - Setup</a>
+    <a href="../day2/day2.html">Day 2 - Employee List</a>
+    <a class="active" href="day3.html">Day 3 - Employee Management</a>
+    <a href="../day4/day4.html">Day 4 - Edit Employee</a>
+    <a href="../day5/day5.html">Day 5 - Delete Employee</a>
+</aside>
+ 
+<main class="main">
+ 
+    <header class="topbar">
+        <div>
+            <p class="small">JEEBLY LOGISTICS / LEARNING PLAN</p>
+            <h1>Day 3 - Employee Management</h1>
+            <p class="subtitle">Add, search, filter and manage employee records.</p>
+        </div>
+        <span id="currentDate"></span>
+    </header>
+ 
+    <section class="welcome">
+        <div>
+            <p class="tag">DAY 03</p>
+            <h2>Employee Management</h2>
+            <p>Add new employees and manage employee records using search, filters and sorting.</p>
+        </div>
+        <div class="welcome-icon">👥</div>
+    </section>
+ 
+    <section class="stats">
+        <div class="stat-card">
+            <p>Total Employees</p>
+            <h2 id="totalEmployees">0</h2>
+        </div>
+ 
+        <div class="stat-card">
+            <p>Active Employees</p>
+            <h2 id="activeEmployees">0</h2>
+        </div>
+ 
+        <div class="stat-card">
+            <p>Departments</p>
+            <h2 id="totalDepartments">0</h2>
+        </div>
+    </section>
+ 
+    <section class="content-card">
+        <div class="section-heading">
+            <div>
+                <h2>Add New Employee</h2>
+                <p>Enter employee details and save them to the database.</p>
+            </div>
+            <span class="required-text">* Required fields</span>
+        </div>
+ 
+        <form id="employeeForm">
+            <div class="form-grid">
+ 
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" placeholder="Enter full name" required>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="example@email.com" required>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="mobile">Mobile Number *</label>
+                    <input type="tel" id="mobile" placeholder="10 digit mobile number"
+                           maxlength="10" pattern="[0-9]{10}" required>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="department">Department *</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Human Resources">Human Resources</option>
+                        <option value="Operations">Operations</option>
+                        <option value="Sales">Sales</option>
+                    </select>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="joiningDate">Joining Date *</label>
+                    <input type="date" id="joiningDate" required>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="status">Employee Status *</label>
+                    <select id="status" required>
+                        <option value="">Select Status</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+ 
+            </div>
+ 
+            <div id="message" class="message"></div>
+ 
+            <div class="form-actions">
+                <button type="reset" class="reset-btn">Reset Form</button>
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    + Add Employee
+                </button>
+            </div>
+        </form>
+    </section>
+ 
+    <section class="content-card">
+        <div class="section-heading">
+            <div>
+                <h2>Search & Filters</h2>
+                <p>Find employees by name, email, department or status.</p>
+            </div>
+            <button type="button" id="resetBtn" class="reset-btn">Reset Filters</button>
+        </div>
+ 
+        <div class="filter-grid">
+ 
+            <div class="form-group">
+                <label for="searchInput">Search Employee</label>
+                <input type="search" id="searchInput"
+                       placeholder="Search by name or email...">
+            </div>
+ 
+            <div class="form-group">
+                <label for="departmentFilter">Department</label>
+                <select id="departmentFilter">
+                    <option value="">All Departments</option>
+                </select>
+            </div>
+ 
+            <div class="form-group">
+                <label for="statusFilter">Employee Status</label>
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+ 
+            <div class="form-group">
+                <label for="sortFilter">Sort By</label>
+                <select id="sortFilter">
+                    <option value="name-asc">Name (A to Z)</option>
+                    <option value="name-desc">Name (Z to A)</option>
+                    <option value="date-new">Joining Date (Newest)</option>
+                    <option value="date-old">Joining Date (Oldest)</option>
+                    <option value="department-asc">Department (A to Z)</option>
+                    <option value="department-desc">Department (Z to A)</option>
+                    <option value="status-asc">Status (A to Z)</option>
+                    <option value="status-desc">Status (Z to A)</option>
+                </select>
+            </div>
+ 
+        </div>
+    </section>
+ 
+    <section class="content-card">
+        <div class="section-heading">
+            <div>
+                <h2>Employee Directory</h2>
+                <p id="resultCount">Showing 0 employees</p>
+            </div>
+            <button type="button" id="refreshBtn" class="refresh-btn">↻ Refresh</button>
+        </div>
+ 
+        <div id="loadingMessage" class="message"></div>
+        <div id="errorMessage" class="message error"></div>
+ 
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Employee Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Joining Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+ 
+                <tbody id="employeeTable">
+                    <tr>
+                        <td colspan="6">Loading employees...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+ 
+    <section class="info-card">
+        <h3>What You Will Learn</h3>
+        <ul>
+            <li>Creating and validating an employee registration form</li>
+            <li>Sending POST requests using Fetch API</li>
+            <li>Saving employee data to JSON Server</li>
+            <li>Searching employees using JavaScript</li>
+            <li>Filtering employees by department and status</li>
+            <li>Sorting employee records by name, date and status</li>
+            <li>Displaying employee records in a dynamic table</li>
+        </ul>
+    </section>
+ 
+    <footer>
+        <a href="../day2/day2.html">← Previous Day</a>
+        <a href="../day4/day4.html">Next Day →</a>
+    </footer>
+ 
+</main>
+ 
+<script src="../config.js"></script>
+<script src="day3.js"></script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jeebly Logistics Employee Management Dashboard">
+
+  <title>Jeebly Logistics | Employee Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+      <span class="brand-mark">J</span>
+      <div>
+        <strong>JEEBLY</strong>
+        <small>LOGISTICS</small>
+      </div>
+    </div>
+
+    <p class="nav-label">MAIN MENU</p>
+
+    <a class="nav-link active" href="index.html">
+      <span>▦</span> Employee Dashboard
+    </a>
+
+    <p class="nav-label learning-label">LEARNING MODULES</p>
+
+    <a class="nav-link" href="day1/day1.html">
+      Day 1 · Dashboard Setup
+    </a>
+
+    <a class="nav-link" href="day2/day2.html">
+      Day 2 · Employee List
+    </a>
+
+    <a class="nav-link" href="day3/day3.html">
+      Day 3 · Add &amp; Search
+    </a>
+
+    <a class="nav-link" href="day4/day4.html">
+      Day 4 · Edit &amp; Testing
+    </a>
+
+    <a class="nav-link" href="day5/day5.html">
+      Day 5 · Employee Management
+    </a>
+
+    <div class="sidebar-footer">
+      Employee Management<br>
+      Learning Project
+    </div>
+
+  </aside>
+
+  <!-- MOBILE SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <header class="topbar">
+
+      <div class="topbar-left">
+
+        <button
+          class="menu-toggle"
+          id="menuBtn"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-controls="sidebar"
+          aria-expanded="false"
+        >☰</button>
+
+        <div>
+          <h1>Employee Dashboard</h1>
+          <p>Manage employees, projects and team information</p>
+        </div>
+
+      </div>
+
+      <div class="topbar-right">
+        <span class="today-label">Today</span>
+        <strong id="currentDate">—</strong>
+      </div>
+
+    </header>
+
+    <!-- API STATUS -->
+    <section class="status-strip">
+
+      <span class="status-dot" id="apiDot"></span>
+
+      <span id="apiStatus" role="status">
+        Checking API connection…
+      </span>
+
+      <button class="text-button" id="refreshBtn" type="button">
+        ↻ Refresh
+      </button>
+
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="stats-grid" aria-label="Dashboard statistics">
+
+      <article class="stat-card">
+        <div class="stat-icon red">♙</div>
+        <p>Total Employees</p>
+        <h2 id="totalEmployees">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-icon blue">✓</div>
+        <p>Active Employees</p>
+        <h2 id="activeEmployees">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-icon purple">▣</div>
+        <p>Active Projects</p>
+        <h2 id="activeProjects">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-icon orange">♧</div>
+        <p>Unassigned Employees</p>
+        <h2 id="unassignedEmployees">0</h2>
+      </article>
+
+    </section>
+
+    <!-- EMPLOYEE DIRECTORY -->
+    <section class="panel">
+
+      <div class="panel-heading">
+
+        <div>
+          <h2>Employee Directory</h2>
+          <p>Search, filter, sort and manage all employee records</p>
+        </div>
+
+        <button class="primary-button" id="addEmployeeBtn" type="button">
+          ＋ Add Employee
+        </button>
+
+      </div>
+
+      <!-- FILTERS -->
+      <div class="filter-grid">
+
+        <label class="search-field">
+          <span>Search</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Name, email, mobile or ID"
+          >
+        </label>
+
+        <label>
+          <span>Department</span>
+          <select id="departmentFilter">
+            <option value="">All Departments</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Employee Status</span>
+          <select id="statusFilter">
+            <option value="">All Statuses</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Project Status</span>
+          <select id="projectStatusFilter">
+            <option value="">All Project Status</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Sort By</span>
+          <select id="sortFilter">
+            <option value="name-asc">Name (A–Z)</option>
+            <option value="name-desc">Name (Z–A)</option>
+            <option value="projects-desc">Number of Projects (High–Low)</option>
+            <option value="projects-asc">Number of Projects (Low–High)</option>
+            <option value="date-desc">Joining Date (Newest)</option>
+            <option value="date-asc">Joining Date (Oldest)</option>
+            <option value="status-asc">Status (A–Z)</option>
+            <option value="status-desc">Status (Z–A)</option>
+          </select>
+        </label>
+
+        <button class="secondary-button reset-button" id="resetFiltersBtn" type="button">
+          Reset Filters
+        </button>
+
+      </div>
+
+      <!-- MESSAGES -->
+      <div class="feedback error-feedback" id="errorMessage" role="alert" hidden></div>
+
+      <div class="feedback success-feedback" id="successMessage" role="status" hidden></div>
+
+      <div class="loading-state" id="loadingState" hidden>
+        <span class="spinner"></span>
+        Loading employee records…
+      </div>
+
+      <div class="retry-panel" id="retryPanel" hidden>
+
+        <div>
+          <strong>Unable to load employees</strong>
+          <p id="retryMessage">Check your API connection and try again.</p>
+        </div>
+
+        <button class="primary-button" id="retryBtn" type="button">
+          Retry
+        </button>
+
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Contact</th>
+              <th>Department</th>
+              <th>Projects</th>
+              <th>Project Status</th>
+              <th>Employee Status</th>
+              <th>Joining Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="employeeTable">
+            <tr>
+              <td colspan="8" class="empty-cell">
+                Loading employees…
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <div class="table-footer">
+
+        <span id="showingText">
+          Showing 0–0 of 0 records
+        </span>
+
+        <nav
+          class="pagination"
+          id="pagination"
+          aria-label="Employee pages"
+        ></nav>
+
+      </div>
+
+    </section>
+
+    <footer class="page-footer">
+      Jeebly Logistics · Employee Management Dashboard
+    </footer>
+
+  </main>
+
+</div>
+
+<!-- ADD / EDIT EMPLOYEE MODAL -->
+<div class="modal" id="employeeModal" aria-hidden="true">
+
+  <div
+    class="modal-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
+    <div class="modal-heading">
+
+      <div>
+        <h2 id="modalTitle">Add Employee</h2>
+        <p>Enter employee and project information</p>
+      </div>
+
+      <button
+        class="icon-button"
+        id="closeEmployeeModal"
+        type="button"
+        aria-label="Close"
+      >×</button>
+
+    </div>
+
+    <form id="employeeForm">
+
+      <input type="hidden" id="employeeId">
+
+      <div class="form-grid">
+
+        <label>
+          Full Name
+          <input id="employeeName" required minlength="3" maxlength="80" placeholder="Employee name">
+        </label>
+
+        <label>
+          Email Address
+          <input id="employeeEmail" type="email" required placeholder="name@example.com">
+        </label>
+
+        <label>
+          Mobile Number
+          <input id="employeeMobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required placeholder="10-digit mobile">
+        </label>
+
+        <label>
+          Department
+          <select id="employeeDepartment" required>
+            <option value="">Select department</option>
+            <option>Engineering</option>
+            <option>Marketing</option>
+            <option>Finance</option>
+            <option>Sales</option>
+            <option>Human Resources</option>
+            <option>Operations</option>
+          </select>
+        </label>
+
+        <label>
+          Joining Date
+          <input id="employeeJoiningDate" type="date" required>
+        </label>
+
+        <label>
+          Employee Status
+          <select id="employeeStatus">
+            <option>Active</option>
+            <option>Inactive</option>
+          </select>
+        </label>
+
+        <label class="full-width">
+          Project Name
+          <input id="projectName" placeholder="Leave blank if not assigned">
+        </label>
+
+        <label>
+          Project Status
+          <select id="projectStatus">
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+          </select>
+        </label>
+
+      </div>
+
+      <p class="form-message" id="formMessage" role="alert"></p>
+
+      <div class="modal-actions">
+
+        <button class="secondary-button" id="cancelEmployeeModal" type="button">
+          Cancel
+        </button>
+
+        <button class="primary-button" id="saveEmployeeBtn" type="submit">
+          Save Employee
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- EMPLOYEE DETAILS MODAL -->
+<div class="modal" id="detailsModal" aria-hidden="true">
+
+  <div
+    class="modal-card details-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="detailsTitle"
+  >
+
+    <div class="modal-heading">
+
+      <div>
+        <h2 id="detailsTitle">Employee Details</h2>
+        <p>Employee profile and assigned projects</p>
+      </div>
+
+      <button
+        class="icon-button"
+        id="closeDetailsModal"
+        type="button"
+        aria-label="Close"
+      >×</button>
+
+    </div>
+
+    <div id="detailsContent"></div>
+
+    <div class="modal-actions">
+      <button class="primary-button" id="doneDetailsBtn" type="button">
+        Done
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SCRIPTS: CONFIG MUST LOAD BEFORE DASHBOARD -->
+<script src="config.js"></script>
+<script src="dashboard.js"></script>
+
+</body>
+</html>

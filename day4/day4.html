@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeebly Logistics | Day 4 - Edit & Testing</title>
+    <link rel="stylesheet" href="day4.css">
+</head>
+<body>
+ 
+<aside class="sidebar">
+    <div class="logo">
+        <div class="logo-icon">J</div>
+        <div>
+            <h2>JEEBLY</h2>
+            <span>LOGISTICS</span>
+        </div>
+    </div>
+ 
+    <p class="menu-title">MAIN MENU</p>
+    <a href="../index.html">Dashboard</a>
+ 
+    <p class="menu-title">LEARNING PLAN</p>
+    <a href="../day1/day1.html">Day 1 - Dashboard Setup</a>
+    <a href="../day2/day2.html">Day 2 - Employee List</a>
+    <a href="../day3/day3.html">Day 3 - Add & Search</a>
+    <a class="active" href="day4.html">Day 4 - Edit & Testing</a>
+    <a href="../day5/day5.html">Day 5 - Delete Employee</a>
+</aside>
+ 
+<main class="main">
+ 
+<header class="topbar">
+    <div>
+        <p class="breadcrumb">JEEBLY LOGISTICS / LEARNING PLAN</p>
+        <h1>Edit Employee & Testing</h1>
+        <p class="subtitle">Update employee records and test project functionality.</p>
+    </div>
+    <span id="currentDate"></span>
+</header>
+ 
+<section class="hero">
+    <div>
+        <span class="day-label">DAY 04</span>
+        <h2>Edit Employee Functionality</h2>
+        <p>Select an employee, update information and save changes.</p>
+    </div>
+    <div class="hero-icon">✎</div>
+</section>
+ 
+<section class="card">
+    <div class="section-heading">
+        <div>
+            <h2>Select Employee</h2>
+            <p>Choose an employee to update their information.</p>
+        </div>
+    </div>
+ 
+    <div class="select-row">
+        <select id="employeeSelect">
+            <option value="">Loading employees...</option>
+        </select>
+        <button type="button" id="refreshBtn" class="btn secondary">↻ Refresh</button>
+    </div>
+ 
+    <div id="loadingMessage" class="info-message"></div>
+    <div id="errorMessage" class="message error"></div>
+</section>
+ 
+<section class="card">
+    <div class="section-heading">
+        <div>
+            <h2>Edit Employee Information</h2>
+            <p>Update the selected employee details below.</p>
+        </div>
+    </div>
+ 
+    <form id="editForm">
+        <fieldset id="formFields" disabled>
+            <div class="form-grid">
+ 
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" required minlength="3">
+                </div>
+ 
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="mobile">Mobile Number *</label>
+                    <input type="tel" id="mobile" maxlength="10" required>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="department">Department *</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option>Engineering</option>
+                        <option>Marketing</option>
+                        <option>Finance</option>
+                        <option>Human Resources</option>
+                        <option>Operations</option>
+                        <option>Sales</option>
+                    </select>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="joiningDate">Joining Date *</label>
+                    <input type="date" id="joiningDate" required>
+                </div>
+ 
+                <div class="form-group">
+                    <label for="status">Employee Status *</label>
+                    <select id="status" required>
+                        <option value="">Select Status</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+                </div>
+ 
+            </div>
+ 
+            <div class="form-actions">
+                <button type="reset" class="btn secondary">Reset Changes</button>
+                <button type="submit" id="saveBtn" class="btn primary">Save Changes</button>
+            </div>
+        </fieldset>
+    </form>
+ 
+    <div id="message" class="message" aria-live="polite"></div>
+</section>
+ 
+<!-- DAY 7 MERGED: TESTING & DEPLOYMENT -->
+ 
+<section class="hero testing-hero">
+    <div>
+        <span class="day-label">PROJECT TESTING</span>
+        <h2>Testing & Deployment</h2>
+        <p>Verify API connection and test all employee dashboard features.</p>
+    </div>
+    <div class="hero-icon">✓</div>
+</section>
+ 
+<section class="stats">
+    <article class="stat-card">
+        <p>Total Tests</p>
+        <h2 id="totalTests">0</h2>
+    </article>
+ 
+    <article class="stat-card">
+        <p>Completed Tests</p>
+        <h2 id="completedTests">0</h2>
+    </article>
+ 
+    <article class="stat-card">
+        <p>Remaining Tests</p>
+        <h2 id="remainingTests">0</h2>
+    </article>
+ 
+    <article class="stat-card">
+        <p>Progress</p>
+        <h2 id="progressPercent">0%</h2>
+    </article>
+</section>
+ 
+<section class="card">
+    <div class="section-heading">
+        <div>
+            <h2>API Connection</h2>
+            <p>Check the connection between frontend and backend.</p>
+        </div>
+        <button id="checkApiBtn" class="btn primary" type="button">Check API</button>
+    </div>
+ 
+    <div class="api-status">
+        <span id="apiDot" class="dot"></span>
+        <span id="apiMessage">Not checked yet</span>
+    </div>
+ 
+    <p id="employeeCount" class="info-message">Employee Count: --</p>
+</section>
+ 
+<section class="card">
+    <div class="section-heading">
+        <div>
+            <h2>Project Testing Checklist</h2>
+            <p>Complete each test and mark it when verified.</p>
+        </div>
+        <button id="resetBtn" class="btn secondary" type="button">Reset Checklist</button>
+    </div>
+ 
+    <div id="checklist" class="checklist">
+        <label><input type="checkbox"> Dashboard page opens correctly</label>
+        <label><input type="checkbox"> Employee list loads successfully</label>
+        <label><input type="checkbox"> Add Employee functionality works</label>
+        <label><input type="checkbox"> Search and Filter functionality works</label>
+        <label><input type="checkbox"> Edit Employee functionality works</label>
+        <label><input type="checkbox"> Delete Employee functionality works</label>
+        <label><input type="checkbox"> API connection works properly</label>
+        <label><input type="checkbox"> Refresh button works correctly</label>
+        <label><input type="checkbox"> Previous and Next navigation works</label>
+        <label><input type="checkbox"> Website works on mobile screen</label>
+        <label><input type="checkbox"> Live deployed website opens correctly</label>
+    </div>
+ 
+    <div class="progress-track">
+        <div id="progressBar"></div>
+    </div>
+ 
+    <p id="progressText" class="info-message">0 of 11 tests completed</p>
+</section>
+ 
+<section class="card">
+    <h2>Final Review</h2>
+    <ul class="review-list">
+        <li>Verify all employee operations.</li>
+        <li>Check API connection and database responses.</li>
+        <li>Test website navigation and responsive layout.</li>
+        <li>Check browser console for errors.</li>
+        <li>Deploy frontend and backend to hosting platforms.</li>
+        <li>Share GitHub repository and live project URL for review.</li>
+    </ul>
+</section>
+ 
+<footer>
+    <a href="../day3/day3.html">← Previous Day</a>
+    <a href="../day5/day5.html">Next Day →</a>
+</footer>
+ 
+</main>
+ 
+<script src="../config.js"></script>
+<script src="day4.js"></script>
+</body>
+</html>
