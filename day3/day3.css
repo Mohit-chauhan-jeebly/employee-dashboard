@@ -1,0 +1,448 @@
+:root {
+    --jeebly-red: #DC1D47;
+    --jeebly-blue: #163758;
+    --background: #f4f6f9;
+    --white: #ffffff;
+    --text: #263449;
+    --muted: #718096;
+    --border: #e2e8f0;
+}
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+ 
+body {
+    background: var(--background);
+    color: var(--text);
+    display: flex;
+    min-height: 100vh;
+}
+ 
+.sidebar {
+    width: 245px;
+    background: var(--jeebly-blue);
+    padding: 28px 18px;
+    flex-shrink: 0;
+}
+ 
+.sidebar h2 {
+    color: var(--white);
+    letter-spacing: 1px;
+    font-size: 19px;
+    margin-bottom: 35px;
+    font-weight: 800;
+}
+ 
+.side-label {
+    color: #b7c7d8;
+    font-size: 11px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+}
+ 
+.sidebar a {
+    display: block;
+    color: #d0dce8;
+    text-decoration: none;
+    padding: 13px 12px;
+    border-radius: 8px;
+    margin-bottom: 7px;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+ 
+.sidebar a:hover,
+.sidebar a.active {
+    background: var(--jeebly-red);
+    color: var(--white);
+}
+ 
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+ 
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+ 
+.small {
+    color: var(--jeebly-red);
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+ 
+.topbar h1 {
+    font-size: 25px;
+    color: var(--jeebly-blue);
+}
+ 
+.subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 7px;
+}
+ 
+#currentDate {
+    color: var(--jeebly-blue);
+    font-size: 13px;
+    white-space: nowrap;
+}
+ 
+.welcome {
+    background: linear-gradient(120deg, var(--jeebly-blue), #285477);
+    border-left: 4px solid var(--jeebly-red);
+    padding: 27px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    color: var(--white);
+}
+ 
+.tag {
+    color: #ffb5c5;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+ 
+.welcome h2 {
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+ 
+.welcome p:last-child {
+    color: #e1eaf3;
+    font-size: 14px;
+    line-height: 1.6;
+}
+ 
+.welcome-icon {
+    font-size: 42px;
+}
+ 
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 23px;
+}
+ 
+.stat-card,
+.content-card,
+.info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 23px;
+    box-shadow: 0 3px 12px rgba(22, 55, 88, 0.05);
+}
+ 
+.stat-card {
+    border-top: 3px solid var(--jeebly-red);
+}
+ 
+.stat-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+ 
+.stat-card h2 {
+    font-size: 27px;
+    color: var(--jeebly-blue);
+}
+ 
+.content-card,
+.info-card {
+    margin-bottom: 22px;
+}
+ 
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+ 
+.section-heading h2 {
+    color: var(--jeebly-blue);
+    font-size: 19px;
+}
+ 
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+}
+ 
+.required-text {
+    color: var(--jeebly-red);
+    font-size: 12px;
+}
+ 
+.form-grid,
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+ 
+.form-group label {
+    display: block;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+ 
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--text);
+    outline: none;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--jeebly-red);
+    box-shadow: 0 0 0 3px rgba(220, 29, 71, 0.10);
+}
+ 
+.form-group input::placeholder {
+    color: #9aa5b5;
+}
+ 
+.form-group input[type="date"] {
+    color-scheme: light;
+}
+ 
+.message {
+    margin-top: 17px;
+    font-size: 13px;
+}
+ 
+.message.success,
+.message.error {
+    padding: 12px;
+    border-radius: 7px;
+}
+ 
+.message.success {
+    color: #166534;
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+}
+ 
+.message.error {
+    color: #b91c1c;
+    background: #fef2f2;
+    border-left: 4px solid var(--jeebly-red);
+}
+ 
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 23px;
+}
+ 
+button {
+    border: none;
+    padding: 11px 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s ease;
+}
+ 
+.reset-btn {
+    background: #edf1f5;
+    color: var(--jeebly-blue);
+    border: 1px solid var(--border);
+}
+ 
+.reset-btn:hover {
+    background: #e1e8ef;
+}
+ 
+.submit-btn {
+    background: var(--jeebly-red);
+    color: white;
+}
+ 
+.submit-btn:hover {
+    background: #bd183c;
+}
+ 
+.refresh-btn {
+    background: var(--jeebly-blue);
+    color: white;
+}
+ 
+.refresh-btn:hover {
+    background: #254d70;
+}
+ 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+ 
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+ 
+table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+ 
+th {
+    text-align: left;
+    background: #edf2f7;
+    color: var(--jeebly-blue);
+    padding: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+ 
+td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+}
+ 
+tbody tr:hover {
+    background: #f8fafc;
+}
+ 
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+ 
+.status.active {
+    background: #dcfce7;
+    color: #166534;
+}
+ 
+.status.inactive {
+    background: #f1f5f9;
+    color: #64748b;
+}
+ 
+.info-card h3 {
+    color: var(--jeebly-blue);
+    margin-bottom: 15px;
+}
+ 
+.info-card li {
+    color: var(--muted);
+    margin: 11px 0 11px 20px;
+    font-size: 13px;
+}
+ 
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+}
+ 
+footer a {
+    color: var(--jeebly-red);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+ 
+footer a:hover {
+    color: var(--jeebly-blue);
+}
+ 
+@media (max-width: 850px) {
+    body {
+        display: block;
+    }
+ 
+    .sidebar {
+        width: 100%;
+    }
+ 
+    .main {
+        padding: 18px;
+    }
+ 
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+@media (max-width: 600px) {
+    .form-grid,
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    .topbar,
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+ 
+    .reset-btn,
+    .refresh-btn {
+        width: 100%;
+    }
+ 
+    .form-actions {
+        flex-direction: column;
+    }
+ 
+    .form-actions button {
+        width: 100%;
+    }
+ 
+    footer {
+        flex-direction: column;
+    }
+ 
+    .welcome {
+        padding: 22px;
+    }
+}
+/* Keep page actions clear of the Netlify deploy badge at the bottom edge. */
+.main { padding-bottom: 110px; }
+@media (max-width: 650px) { .main { padding-bottom: 125px; } }

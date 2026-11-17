@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeebly Logistics | Day 2</title>
+    <link rel="stylesheet" href="day2.css">
+</head>
+<body>
+ 
+<div class="app">
+ 
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon">J</div>
+            <div>
+                <h2>JEEBLY</h2>
+                <p>LOGISTICS MANAGEMENT</p>
+            </div>
+        </div>
+ 
+        <p class="nav-title">MAIN MENU</p>
+        <a href="../index.html" class="nav-link">⌂ Dashboard</a>
+ 
+        <p class="nav-title">DAILY TASKS</p>
+        <a href="../day1/day1.html" class="nav-link">▣ Day 1 - Dashboard Setup</a>
+        <a href="day2.html" class="nav-link active">▤ Day 2 - Employee List</a>
+        <a href="../day3/day3.html" class="nav-link">＋ Day 3 - Add & Search</a>
+        <a href="../day4/day4.html" class="nav-link">✎ Day 4 - Edit & Testing</a>
+        <a href="../day5/day5.html" class="nav-link">⌫ Day 5 - Delete Employee</a>
+    </aside>
+ 
+    <div class="main">
+ 
+        <header class="topbar">
+            <div class="top-left">
+                <button id="menuBtn">☰</button>
+                <span>Learning Plan / Day 2</span>
+            </div>
+            <div class="profile">
+                <span class="online">● Project Workspace</span>
+                <div class="avatar">M</div>
+            </div>
+        </header>
+ 
+        <main class="content">
+ 
+            <div class="page-heading">
+                <div>
+                    <span class="day-label">DAY 02</span>
+                    <h1>Display Employee List</h1>
+                    <p>Fetch employee records from API and display them in a table.</p>
+                </div>
+                <div class="date" id="currentDate"></div>
+            </div>
+ 
+            <section class="welcome-card">
+                <div>
+                    <h2>Employee Directory 👥</h2>
+                    <p>View employee information retrieved from the backend API.</p>
+                </div>
+                <div class="welcome-icon">📋</div>
+            </section>
+ 
+            <section class="stats">
+ 
+                <div class="stat-card">
+                    <div class="stat-icon purple">👥</div>
+                    <p>Total Employees</p>
+                    <h2 id="totalEmployees">0</h2>
+                </div>
+ 
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <p>Active Employees</p>
+                    <h2 id="activeEmployees">0</h2>
+                </div>
+ 
+                <div class="stat-card">
+                    <div class="stat-icon blue">▣</div>
+                    <p>Departments</p>
+                    <h2 id="totalDepartments">0</h2>
+                </div>
+ 
+            </section>
+ 
+            <section class="panel">
+ 
+                <div class="panel-heading">
+                    <div>
+                        <h2>Employee Records</h2>
+                        <p>Employee information from the API</p>
+                    </div>
+                    <button class="refresh-btn" id="refreshBtn">↻ Refresh</button>
+                </div>
+ 
+                <div class="table-info">
+                    <span id="recordCount">Loading employee records...</span>
+                    <span id="apiStatus" class="api-status">Connecting...</span>
+                </div>
+ 
+                <div id="errorMessage" class="error-message" hidden></div>
+ 
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>EMPLOYEE</th>
+                                <th>EMAIL</th>
+                                <th>MOBILE</th>
+                                <th>DEPARTMENT</th>
+                                <th>JOINING DATE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+ 
+                        <tbody id="employeeTable">
+                            <tr>
+                                <td colspan="7" class="message">Loading employees...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+ 
+                <div class="table-footer">
+                    <span id="showingText">Waiting for data...</span>
+ 
+                    <div class="pagination">
+                        <button id="previousBtn" disabled>Previous</button>
+                        <span id="pageNumber">1</span>
+                        <button id="nextBtn" disabled>Next</button>
+                    </div>
+                </div>
+ 
+            </section>
+ 
+        </main>
+ 
+        <footer>
+            <p>© 2026 Jeebly Logistics. All rights reserved.</p>
+ 
+            <div class="footer-buttons">
+                <a href="../day1/day1.html" class="previous-btn">← Previous Day</a>
+                <a href="../day3/day3.html" class="next-btn">Next Day →</a>
+            </div>
+        </footer>
+ 
+    </div>
+</div>
+ 
+<script src="../config.js"></script>
+<script src="day2.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeebly Logistics | Day 1</title>
+    <link rel="stylesheet" href="day1.css">
+</head>
+<body>
+ 
+<div class="app">
+ 
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon">J</div>
+            <div>
+                <h2>JEEBLY</h2>
+                <p>LOGISTICS MANAGEMENT</p>
+            </div>
+        </div>
+ 
+        <p class="nav-title">MAIN MENU</p>
+        <a href="../index.html" class="nav-link">⌂ Dashboard</a>
+ 
+        <p class="nav-title">DAILY TASKS</p>
+        <a href="day1.html" class="nav-link active">▣ Day 1 - Dashboard Setup</a>
+        <a href="../day2/day2.html" class="nav-link">▤ Day 2 - Employee List</a>
+        <a href="../day3/day3.html" class="nav-link">＋ Day 3 - Add & Search</a>
+        <a href="../day4/day4.html" class="nav-link">✎ Day 4 - Edit & Testing</a>
+        <a href="../day5/day5.html" class="nav-link">⌫ Day 5 - Delete Employee</a>
+    </aside>
+ 
+    <div class="main">
+ 
+        <header class="topbar">
+            <div class="top-left">
+                <button id="menuBtn">☰</button>
+                <span>Learning Plan / Day 1</span>
+            </div>
+            <div class="profile">
+                <span class="online">● Project Workspace</span>
+                <div class="avatar">M</div>
+            </div>
+        </header>
+ 
+        <main class="content">
+ 
+            <div class="page-heading">
+                <div>
+                    <span class="day-label">DAY 01</span>
+                    <h1>Employee Dashboard Setup</h1>
+                    <p>Create the basic employee management dashboard layout.</p>
+                </div>
+                <div class="date" id="currentDate"></div>
+            </div>
+ 
+            <section class="welcome-card">
+                <div>
+                    <h2>Welcome to Day 1! 👋</h2>
+                    <p>Today we will build the basic structure of the Jeebly Employee Management System.</p>
+                </div>
+                <div class="welcome-icon">📊</div>
+            </section>
+ 
+            <section class="stats">
+ 
+                <div class="stat-card">
+                    <div class="stat-icon purple">▣</div>
+                    <p>Dashboard Layout</p>
+                    <h2>Ready</h2>
+                    <span>Basic structure</span>
+                </div>
+ 
+                <div class="stat-card">
+                    <div class="stat-icon blue">☰</div>
+                    <p>Navigation Menu</p>
+                    <h2>Ready</h2>
+                    <span>5 learning modules</span>
+                </div>
+ 
+                <div class="stat-card">
+                    <div class="stat-icon green">▤</div>
+                    <p>Page Design</p>
+                    <h2>Ready</h2>
+                    <span>Responsive layout</span>
+                </div>
+ 
+            </section>
+ 
+            <section class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Day 1 - Task Details</h2>
+                        <p>Dashboard setup activities</p>
+                    </div>
+                    <span class="task-status">In Progress</span>
+                </div>
+ 
+                <div class="task-list">
+ 
+                    <label class="task-item">
+                        <input type="checkbox" class="task-check">
+                        <span>
+                            <strong>Create project structure</strong>
+                            <small>Organize HTML, CSS and JavaScript files.</small>
+                        </span>
+                    </label>
+ 
+                    <label class="task-item">
+                        <input type="checkbox" class="task-check">
+                        <span>
+                            <strong>Create dashboard header</strong>
+                            <small>Design the top navigation bar.</small>
+                        </span>
+                    </label>
+ 
+                    <label class="task-item">
+                        <input type="checkbox" class="task-check">
+                        <span>
+                            <strong>Create sidebar navigation</strong>
+                            <small>Add links for all five learning modules.</small>
+                        </span>
+                    </label>
+ 
+                    <label class="task-item">
+                        <input type="checkbox" class="task-check">
+                        <span>
+                            <strong>Design dashboard cards</strong>
+                            <small>Create employee summary cards.</small>
+                        </span>
+                    </label>
+ 
+                    <label class="task-item">
+                        <input type="checkbox" class="task-check">
+                        <span>
+                            <strong>Make the layout responsive</strong>
+                            <small>Adjust the design for mobile and desktop.</small>
+                        </span>
+                    </label>
+ 
+                </div>
+ 
+                <div class="progress-area">
+                    <div class="progress-info">
+                        <span>Task Completion</span>
+                        <strong id="progressText">0%</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="progressMessage">Complete the checklist to finish Day 1.</p>
+                </div>
+ 
+            </section>
+ 
+            <section class="panel learning-panel">
+                <h2>What You Will Learn</h2>
+ 
+                <div class="learning-grid">
+                    <div>
+                        <span>01</span>
+                        <h3>HTML Structure</h3>
+                        <p>Understand the layout of a web page.</p>
+                    </div>
+ 
+                    <div>
+                        <span>02</span>
+                        <h3>CSS Styling</h3>
+                        <p>Design a professional dashboard interface.</p>
+                    </div>
+ 
+                    <div>
+                        <span>03</span>
+                        <h3>JavaScript Basics</h3>
+                        <p>Add basic interactive functionality.</p>
+                    </div>
+                </div>
+            </section>
+ 
+        </main>
+ 
+        <footer>
+            <p>© 2026 Jeebly Logistics. All rights reserved.</p>
+            <div class="footer-buttons">
+                <a href="../index.html" class="previous-btn">← Dashboard</a>
+                <a href="../day2/day2.html" class="next-btn">Next Day →</a>
+            </div>
+        </footer>
+ 
+    </div>
+</div>
+ 
+<script src="day1.js"></script>
+</body>
+</html>
